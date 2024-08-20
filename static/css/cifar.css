@@ -1,0 +1,139 @@
+:root{
+    --main-color:#6469f5;
+    --secondary-color:#7b7ff6;
+    --light-color:#f5f4fa;
+    --white-color:white;
+}
+body{
+    font-family:'Nunito',sans-serif;font-size: 16px;font-weight:400;line-height: 1.0;
+    background-color: var(--white-color);color:#222;
+}
+a{
+    text-decoration: none;color: inherit;
+}
+ul{
+    list-style: none;
+}
+.site{
+    position: relative;background-color:var(--light-color);
+}
+._bg{
+    position: absolute;left: 0; right: 0; top: 100px;
+}
+._bg::before{
+    content: '';position: absolute;top: -150px; width: 100%;
+}
+.container{
+    position: relative;
+    max-width: 1000px;margin: 0 auto;padding: 0 20px;position: relative;
+}
+nav{
+    display: flex;align-items:center;justify-content:space-between; line-height: 80px;
+     color:var(--white-color); /* margin-bottom: 1 em; */
+}
+nav .logo a{
+    font-size: 3em;color:#453c5c;font-family: 'Poppin';font-weight:bolder;
+}
+nav ul{
+    display: flex;gap:50px;color:#7b7ff6;font-weight:700;font-size:larger;
+}
+nav ul a:hover{
+    color:#222;text-decoration: underline;
+}
+nav a{
+    display: flex;
+}
+.contact{
+    background-color: var(--white-color);padding: 60px;border-radius: 10px;
+    max-width: 960px;margin: 1em auto;box-shadow: rgba(0,0,0,0.2) 0 18px 50px -10px;
+}
+.split {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left, .right {
+    flex: 1;
+    padding: 30px;
+}
+
+.left {
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #000b76;
+}
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: #000b76;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #000a5c;
+}
+
+#prediction-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e6e6e6;
+    border-radius: 5px;
+}
+
+.class-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.class-item {
+    text-align: center;
+}
+
+.class-item img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.class-item p {
+    font-size: 14px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .split {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ion-icon {
+        display: block;
+    }
+}

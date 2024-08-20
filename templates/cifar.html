@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cifar.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <div id="page" class="site">
+        <div class="_bg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000b76" fill-opacity="1" d="M0,128L15,149.3C30,171,60,213,90,197.3C120,181,150,107,180,80C210,53,240,75,270,106.7C300,139,330,181,360,213.3C390,245,420,267,450,229.3C480,192,510,96,540,96C570,96,600,192,630,197.3C660,203,690,117,720,90.7C750,64,780,96,810,133.3C840,171,870,213,900,234.7C930,256,960,256,990,250.7C1020,245,1050,235,1080,218.7C1110,203,1140,181,1170,170.7C1200,160,1230,160,1260,176C1290,192,1320,224,1350,240C1380,256,1410,256,1425,256L1440,256L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z"></path></svg>
+        </div>
+        <div class="container">
+         <!------header starts------->
+            <header>
+                <nav>
+                    <div class="logo">
+                        <a href="#">Image Classifier</a>
+                    </div>
+                    <ul>
+                        <li><a href="Homepage.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Dataset</a></li>
+                        <li><a href="#">Model</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!------header ends-------->
+            <main>
+                <div class="contact">
+                    <div class="split">
+                        <div class="left">
+                         <h1>Upload an Image</h1>
+                         <p>Upload an image to predict its class</p>
+                         <form action="/predict" method="post" enctype="multipart/form-data">
+                         <p><input type="file" accept="image/*" name="file" id="image" required></p>
+                         <p><input type="submit" class="button" value="Predict"></p>
+                         </form>
+                         {% if prediction %}
+                         <div id="prediction-result">
+                         <h2>Prediction: <span id="predicted-class">{{ prediction}}</span></h2>
+                         <p><img src="{{ url_for('static', filename='images/uploads/' + user_image)}}" alt="Uploaded Image" style="max-width: 200px;"></p>
+                         </div>
+                         {% endif %}
+                         </div>
+
+                        <div class="right">
+                            <h2>CIFAR-10 Dataset Classes</h2>
+                            <div class="class-images">
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/airplane.jpg') }}" alt="Airplane">
+                                    <p>Airplane</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/automobile.jpg') }}" alt="Automobile">
+                                    <p>Automobile</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/bird.jpg') }}" alt="Bird">
+                                    <p>Bird</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/cat.jpg') }}" alt="Cat">
+                                    <p>Cat</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/deer.jpg') }}" alt="Deer">
+                                    <p>Deer</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/dog.jpg') }}" alt="Dog">
+                                    <p>Dog</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/frog.jpg') }}" alt="Frog">
+                                    <p>Frog</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/horse.jpg') }}" alt="Horse">
+                                    <p>Horse</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/ship.jpeg') }}" alt="Ship">
+                                    <p>Ship</p>
+                                </div>
+                                <div class="class-item">
+                                    <img src="{{ url_for('static', filename='cifar/truck.jpg') }}" alt="Truck">
+                                    <p>Truck</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+<script src="script.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+</html>
