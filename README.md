@@ -24,16 +24,6 @@ Each image in the dataset belongs to one of the following 10 classes:
 
 For this project, the test set was further split into validation and test sets to fine-tune the model's hyperparameters.
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Dataset Overview](#dataset-overview)
-3. [Model Architecture](#model-architecture)
-4. [Training Process](#training-process)
-5. [Evaluation and Results](#evaluation-and-results)
-6. [Visualizations](#visualizations)
-7. [Conclusion](#conclusion)
-
 ## Model Architecture
 
 The CNN model was built using TensorFlow and Keras, consisting of the following layers:
