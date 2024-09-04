@@ -24,7 +24,6 @@ Each image in the dataset belongs to one of the following 10 classes:
 
 For this project, the test set was further split into validation and test sets to fine-tune the model's hyperparameters.
 
-<<<<<<< HEAD
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -35,10 +34,7 @@ For this project, the test set was further split into validation and test sets t
 6. [Visualizations](#visualizations)
 7. [Conclusion](#conclusion)
 
-## Model Architectures
-=======
 ## Model Architecture
->>>>>>> 9a8a79e1e3c0249936ea0dbe5ad7b88d8180c6bc
 
 ### 1. Original Custom CNN Model
 The first CNN model was built using TensorFlow and Keras, consisting of the following layers:
@@ -103,8 +99,6 @@ Training and validation metrics such as accuracy and loss were plotted to visual
 
 ## Conclusion
 
-<<<<<<< HEAD
 In this project, we explored different CNN architectures for image classification on the CIFAR-10 dataset. The improved custom CNN model achieved the highest accuracy at 91.94%, demonstrating the effectiveness of deeper networks and data augmentation. The ResNet34 model, while powerful, did not outperform the custom models in this particular case. Regularization techniques and careful hyperparameter tuning were crucial in achieving high performance.
-=======
+
 The CNN model effectively classified images from the CIFAR-10 dataset with high accuracy. Regularization techniques like L2 regularization and dropout played a crucial role in preventing overfitting, while early stopping and learning rate scheduling optimized the training process. The project demonstrates the power of deep learning techniques in image classification tasks.
->>>>>>> 9a8a79e1e3c0249936ea0dbe5ad7b88d8180c6bc
